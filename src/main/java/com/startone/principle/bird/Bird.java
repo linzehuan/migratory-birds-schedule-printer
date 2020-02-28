@@ -30,6 +30,9 @@ public class Bird {
         return "I'm flying";
     }
 
+    public String swimming() {
+        return "I'm swimming";
+    }
     public String action(String action) {
         switch (action) {
             case "eating":
@@ -40,6 +43,8 @@ public class Bird {
                 return performing();
             case "flying":
                 return flying();
+            case "swimming":
+                return swimming();
         }
         return "unknown";
     }

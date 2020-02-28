@@ -22,14 +22,13 @@ public class Application {
                 new ScheduleItem("7:00", "eating"),
                 new ScheduleItem("8:00", "walking"),
                 new ScheduleItem("9:00", "performing"),
-                new ScheduleItem("10:00", "flying")
-
+                new ScheduleItem("10:00", "flying"),
+                new ScheduleItem("11:00", "swimming")
         );
-        List<Bird> birds = Lists.newArrayList(new WildGoose(), new SwanGoose());
+        List<Bird> birds = Lists.newArrayList(new WildGoose(), new SwanGoose(),new Penguin());
 
         BirdsSchedulePrinter birdsSchedulePrinter = new BirdsSchedulePrinter(schedule, birds, new TextFormatter());
         birdsSchedulePrinter.print();
 
-        System.out.println("ok");
     }
 }

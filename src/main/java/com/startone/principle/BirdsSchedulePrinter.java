@@ -35,9 +35,18 @@ public class BirdsSchedulePrinter {
 
         StringBuilder formatMessage = new StringBuilder();
 
+
         schedule.forEach(scheduleItem -> {
             birds.forEach(bird -> {
+                switch (scheduleItem.getAction()){
+                    case "walking": break;
+                    case "eating": break;
+                    case "performing":break;
+                    case "flying": if(bird instanceof Penguin){return;}break;
+                    case "swimming":if(bird instanceof SwanGoose){return;}break;
+                }
                 formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), bird.action(scheduleItem.getAction())));
+
             });
         });
         this.message = formatMessage.toString();
