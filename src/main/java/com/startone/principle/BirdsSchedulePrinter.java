@@ -1,11 +1,9 @@
 package com.startone.principle;
 
-import com.google.common.collect.Lists;
-import com.startone.principle.bird.Bird;
-import com.startone.principle.bird.SwanGoose;
-import com.startone.principle.bird.WildGoose;
+import com.startone.principle.bird.*;
 import com.startone.principle.format.Formatter;
-import com.startone.principle.format.TextFormatter;
+import com.startone.principle.bird.skill.IFly;
+import com.startone.principle.bird.skill.ISwim;
 
 import java.util.*;
 
@@ -32,20 +30,34 @@ public class BirdsSchedulePrinter {
     private String message;
 
     public void print() {
-
+                 
         StringBuilder formatMessage = new StringBuilder();
-
 
         schedule.forEach(scheduleItem -> {
             birds.forEach(bird -> {
-                switch (scheduleItem.getAction()){
-                    case "walking": break;
-                    case "eating": break;
-                    case "performing":break;
-                    case "flying": if(bird instanceof Penguin){return;}break;
-                    case "swimming":if(bird instanceof SwanGoose){return;}break;
+                switch (scheduleItem.getAction()) {
+                    case "walking":
+                        formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), bird.walking()));
+                        break;
+                    case "eating":
+                        formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), bird.eating()));
+                        break;
+                    case "performing":
+                        formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), bird.performing()));
+                        break;
+                    case "flying":
+                        if (bird instanceof IFly) {
+                            formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), ((IFly) bird).flying()));
+                            return;
+                        }
+                        break;
+                    case "swimming":
+                        if (bird instanceof ISwim) {
+                            formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), ((ISwim) bird).action()));
+                        }
+                        break;
+                    default:
                 }
-                formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), bird.action(scheduleItem.getAction())));
 
             });
         });

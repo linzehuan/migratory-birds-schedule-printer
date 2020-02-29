@@ -13,7 +13,7 @@ public class Bird {
     public Bird(String name) {
         this.name = name;
     }
-    
+
     public String eating() {
         return "I'm eating";
     }
@@ -22,32 +22,12 @@ public class Bird {
         return "I'm walking";
     }
 
-    public String performing(){
+    public String performing() {
         return "I'm performing";
     }
 
-    public String flying() {
-        return "I'm flying";
-    }
 
-    public String swimming() {
-        return "I'm swimming";
-    }
-    public String action(String action) {
-        switch (action) {
-            case "eating":
-                return eating();
-            case "walking":
-                return walking();
-            case "performing":
-                return performing();
-            case "flying":
-                return flying();
-            case "swimming":
-                return swimming();
-        }
-        return "unknown";
-    }
+
 
     public String getName() {
         return name;
