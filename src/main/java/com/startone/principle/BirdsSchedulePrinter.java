@@ -53,7 +53,7 @@ public class BirdsSchedulePrinter {
                         break;
                     case "swimming":
                         if (bird instanceof ISwim) {
-                            formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), ((ISwim) bird).action()));
+                            formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), ((ISwim) bird).swimming()));
                         }
                         break;
                     default:

@@ -8,5 +8,5 @@ package com.startone.principle.bird.skill;
  */
 public interface ISwim {
 
-    String action();
+    String swimming();
 }

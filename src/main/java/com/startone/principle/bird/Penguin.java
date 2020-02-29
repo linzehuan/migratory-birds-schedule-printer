@@ -19,7 +19,7 @@ public class Penguin extends Bird implements ISwim {
     }
 
     @Override
-    public String action() {
-        return swimmer.action();
+    public String swimming() {
+        return swimmer.swimming();
     }
 }

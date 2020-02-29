@@ -8,7 +8,7 @@ package com.startone.principle.bird.skill;
  */
 public class Swimmer implements ISwim {
     @Override
-    public String action() {
-        return "I'm swimming";
+    public String swimming() {
+        return "swimming";
     }
 }

@@ -11,6 +11,6 @@ public class TextFormatter implements Formatter {
 
     @Override
     public String format(String... params) {
-        return String.format("%s,%s,%s\n",params);
+        return String.format("%s,%s,I'm %s\n",params);
     }
 }

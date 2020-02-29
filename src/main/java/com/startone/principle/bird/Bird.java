@@ -15,15 +15,15 @@ public class Bird {
     }
 
     public String eating() {
-        return "I'm eating";
+        return "eating";
     }
 
     public String walking() {
-        return "I'm walking";
+        return "walking";
     }
 
     public String performing() {
-        return "I'm performing";
+        return "performing";
     }
 
 

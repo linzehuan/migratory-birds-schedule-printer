@@ -23,8 +23,8 @@ public class WildGoose extends Bird implements ISwim, IFly {
 
     }
     @Override
-    public String action() {
-        return swimmer.action();
+    public String swimming() {
+        return swimmer.swimming();
     }
 
     @Override
