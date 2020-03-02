@@ -1,7 +1,6 @@
 package com.startone.principle.bird;
 
-import com.startone.principle.bird.skill.Flier;
-import com.startone.principle.bird.skill.IFly;
+import com.startone.principle.bird.skill.*;
 
 /**
  * @author Lin Zehuan
@@ -22,4 +21,5 @@ public class SwanGoose extends Bird implements IFly {
     public String flying() {
         return flier.flying();
     }
+
 }

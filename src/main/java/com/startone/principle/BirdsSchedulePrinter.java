@@ -1,6 +1,8 @@
 package com.startone.principle;
 
 import com.startone.principle.bird.*;
+import com.startone.principle.bird.skill.IBuild;
+import com.startone.principle.bird.skill.IProgram;
 import com.startone.principle.format.Formatter;
 import com.startone.principle.bird.skill.IFly;
 import com.startone.principle.bird.skill.ISwim;
@@ -54,6 +56,16 @@ public class BirdsSchedulePrinter {
                     case "swimming":
                         if (bird instanceof ISwim) {
                             formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), ((ISwim) bird).swimming()));
+                        }
+                        break;
+                    case "programing":
+                        if (bird instanceof IProgram) {
+                            formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), ((IProgram) bird).programing()));
+                        }
+                        break;
+                    case "building":
+                        if (bird instanceof IBuild) {
+                            formatMessage.append(this.formatter.format(scheduleItem.getTime(), bird.getName(), ((IBuild) bird).building()));
                         }
                         break;
                     default:
